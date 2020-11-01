@@ -8,7 +8,7 @@ Dependencies:
 Pandas, GeoIP(python3), geolite2, requests(testing only)
 
 Install the following libraries:  
-pip install pandas
+pip install pandas  
 pip install python-geoip-python3   
 pip install python-geoip-geolite2   
 pip install requests
