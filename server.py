@@ -54,17 +54,17 @@ class Server(BaseHTTPRequestHandler):
         Handles GET requests from the user based on the two handled endpoint paths
         """
         "Handle http header"
-        self.send_response(200)
-        self.send_header("Content-type", "text/html")
-        self.send_header("HTTP_X_FORWARDED_FOR", self.client_address[0])
-        self.end_headers()
+
         # Gets the 2 character country code based on the users ip address
         country_code = geolite2.lookup(self.client_address[0]).country
         # Determine which endpoint the user is requesting
         collect_match = re.match(r'^/collect\?cid=(.*)$', self.path)
         unique_match = re.match(r'^/uniques\?d=(.*)$', self.path)
-        if collect_match:
+        if self.path == "/":
+            self.do_HEAD()
+        elif collect_match:
             self.handle_collect(self.path.split('=')[1], country_code)
+            self.do_HEAD()
         elif unique_match:
             # Starts the output string with the html body
             output = "<html><body>\n"
@@ -74,6 +74,7 @@ class Server(BaseHTTPRequestHandler):
                 output += line
                 output += "<br />\n"
             output += "\n</body></html>\n"
+            self.do_HEAD()
             self.wfile.write(output.encode())
         else:
             # Send error message if GET request does not match either endpoint
@@ -181,3 +182,4 @@ if __name__ == '__main__':
     ip = input("Please enter the IP address to host the server: ")
     port = input("Please give the port the service should bind to: ")
     run(ip, int(port))
+
