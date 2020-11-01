@@ -54,9 +54,12 @@ class Server(BaseHTTPRequestHandler):
         Handles GET requests from the user based on the two handled endpoint paths
         """
         "Handle http header"
-
         # Gets the 2 character country code based on the users ip address
-        country_code = geolite2.lookup(self.client_address[0]).country
+        # If given ip address is localhost put placeholder '--'
+        if self.client_address[0] != '127.0.0.1':
+            country_code = geolite2.lookup(self.client_address[0]).country
+        else:
+            country_code = '--'
         # Determine which endpoint the user is requesting
         collect_match = re.match(r'^/collect\?cid=(.*)$', self.path)
         unique_match = re.match(r'^/uniques\?d=(.*)$', self.path)
