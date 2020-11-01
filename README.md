@@ -3,7 +3,7 @@
 Author: Shawn Jauhal
 Date: October 31st, 2020
 
-Written for Python 3.7 and on
+Written for Python 3.7  
 Dependencies:
 Pandas, GeoIP(python3), geolite2
 
