@@ -5,12 +5,13 @@ Date: October 31st, 2020
 
 Written for Python 3.7  
 Dependencies:
-Pandas, GeoIP(python3), geolite2
+Pandas, GeoIP(python3), geolite2, requests(testing only)
 
 Install the following libraries:  
 pip install panda  
 pip install python-geoip-python3   
 pip install python-geoip-geolite2   
+pip install requests
 
 Class: Server
 
@@ -46,3 +47,9 @@ UUID had logged in on that day, otherwise the value is 0.
 
 ------------------------------------------------------------------------------------------------------------------------
 
+Testing: 
+Class: TestServer
+
+This class was used on my localhost alongside a google cloud platform vm running the server with a static ip address.  
+It tests the basic functionality of the server.  The IP address and port number may change depending on the machine
+running the server code being tested.
