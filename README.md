@@ -2,6 +2,16 @@
 
 Author: Shawn Jauhal
 Date: October 31st, 2020
+
+Written for Python 3.7 and on
+Dependencies:
+Pandas, GeoIP(python3), geolite2
+
+Install the following libraries:
+pip install pandas
+pip install python-geoip-python3
+pip install python-geoip-geolite2
+
 Class: Server
 
 This class represents a http service which takes three possible formats for GET requests.
