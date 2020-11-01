@@ -32,7 +32,7 @@ Database: UUIDLog.db
 This contains a database that logs UUID's.  It's first column contains each UUID that has been logged on ther server. 
 The following column represents the two character country code obtained from the clients ip address and GeoIP.  
 The rest of the columns represent each date the server was obtaining data from the user.  If the value is 1 then the 
-UUID had logged in on that day.
+UUID had logged in on that day, otherwise the value is 0.
 
 ------------------------------------------------------------------------------------------------------------------------
 
