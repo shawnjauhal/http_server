@@ -52,4 +52,4 @@ Class: TestServer
 
 This class was used on my localhost alongside a google cloud platform vm running the server with a static ip address.  
 It tests the basic functionality of the server.  The IP address and port number may change depending on the machine
-running the server code being tested.
+running the server code being tested.  Tests based on the provided database.
