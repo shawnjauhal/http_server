@@ -7,7 +7,7 @@ Written for Python 3.7 and on
 Dependencies:
 Pandas, GeoIP(python3), geolite2
 
-Install the following libraries:
+Install the following libraries:  
 pip install panda  
 pip install python-geoip-python3   
 pip install python-geoip-geolite2   
